@@ -1,0 +1,17 @@
+{
+  "name": "workflow",
+  "private": true,
+  "license": "MIT",
+  "workspaces": [
+    "packages/workflow-core",
+    "packages/workflow-pg",
+    "packages/examples"
+  ],
+  "scripts": {
+    "examples-tests": "lerna run build && yarn workspace examples run all"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "pg": "^8.5.1"
+  }
+}

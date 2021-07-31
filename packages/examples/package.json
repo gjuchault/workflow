@@ -1,0 +1,30 @@
+{
+  "name": "examples",
+  "version": "0.0.0",
+  "description": "Workflow engine management for humans — examples",
+  "author": "Gabriel Juchault <gabriel.juchault@gmail.com>",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "https://github.com/gjuchault/workflow",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "clear": "rm -rf build",
+    "all": "yarn nominal && yarn concurrency && yarn stop && yarn retry && yarn rateLimiting && yarn delayedTask && yarn taskExecutionTimeout && yarn beat && yarn flow",
+    "nominal": "DEBUG=* node build/main/examples/nominal && node build/main/clear",
+    "concurrency": "DEBUG=* node build/main/examples/concurrency && node build/main/clear",
+    "stop": "DEBUG=* node build/main/examples/stop && node build/main/clear",
+    "retry": "DEBUG=* node build/main/examples/retry && node build/main/clear",
+    "rateLimiting": "DEBUG=* node build/main/examples/rateLimiting && node build/main/clear",
+    "delayedTask": "DEBUG=* node build/main/examples/delayedTask && node build/main/clear",
+    "taskExecutionTimeout": "DEBUG=* node build/main/examples/taskExecutionTimeout && node build/main/clear",
+    "beat": "DEBUG=* node build/main/examples/beat && node build/main/clear",
+    "flow": "DEBUG=* node build/main/examples/flow && node build/main/clear"
+  },
+  "dependencies": {
+    "@workflow/core": "*",
+    "@workflow/pg": "*"
+  }
+}
